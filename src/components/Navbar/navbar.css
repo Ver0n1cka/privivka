@@ -1,0 +1,147 @@
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+ul{
+    text-decoration: none;
+}
+
+.navbar{
+    width: 100vw;
+    background: var(--main);
+    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    padding: 2vh 0;
+}
+
+.nav-list__link{
+    color: var(--back);
+    text-decoration: none;
+    font-size: var(--title2);
+    padding: 1.6vh 0;
+}
+
+.nav-list__link--active{
+    color: var(--back);
+    border-bottom: 3px solid var(--back);
+}
+
+
+/* Кнопка бургер-меню (скрыта на десктопе) */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.burger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--back);
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Анимация для открытого бургера (крестик) */
+.burger-menu.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        align-items: flex-start;
+        position: relative;
+        min-height: 60px;
+    }
+
+    /* .container {
+        position: relative;
+    } */
+
+    /* Показываем кнопку бургера */
+    .burger-menu {
+        display: flex;
+    }
+
+    /* Меню в мобильной версии */
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--main);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+        gap: 20px;
+        z-index: 10;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Открытое меню */
+    .nav-list.open {
+        left: 0;
+    }
+
+    /* Стили для пунктов меню на мобилке */
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list__link {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+
+    /* Оверлей (затемнение фона при открытом меню) */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .overlay.open {
+        opacity: 1;
+        visibility: visible;
+    }
+}

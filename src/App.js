@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Navbar from './components/Navbar/Navbar';
+import Main from './components/Main/Main';
+import Calculate from './components/Сalculate/Calculate';
+import Answers from './components/Answers/Answers';
+import ArticlId from './components/ArticlId/ArticlId';
+import Articles from './components/Articles/Articles';
+import Vactine from './components/Vactine/Vactine';
+import ScrollToTop from './components/utils/scroll';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <ScrollToTop />
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Main/>}/>
+          <Route path="/calculate" element={<Calculate/>}/>
+          <Route path="/ansvers" element={<Answers/>}/>
+          <Route path="/articles" element={<Articles/>}/>
+          <Route path="/articles/:id" element={<ArticlId/>}/>
+          <Route path="/vactina/:id" element={<Vactine/>}/>
+        </Routes>
+        <Footer/>
+      </Router>
     </div>
   );
 }

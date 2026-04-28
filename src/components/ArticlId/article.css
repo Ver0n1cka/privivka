@@ -1,0 +1,29 @@
+.articlid{
+    width: 100%;
+}
+
+.articlid__tit{
+    font-weight: 700;
+    font-size: var(--title);
+    color: var(--main);
+    margin:  var(--marg-max) 0;
+}
+
+.articlid__text{
+    font-size: var(--main-text);
+    text-align: justify;
+}
+
+.articlid__text_tit{
+    font-size:  var(--title2);
+    color: var(--font);
+    font-weight: 600;
+    margin:  var(--marg-mid) 0  var(--marg-min) 0;
+}
+
+.articlid__text-link:link{
+    color: var(--main);
+}
+.articlid__text-link:visited{
+    color: var(--dop);
+}

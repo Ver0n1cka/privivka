@@ -1,0 +1,35 @@
+.ans__flex{
+    display: flex;
+    gap: 10px;
+    margin:  var(--marg-mid)  var(--marg-min) 0  var(--marg-min);
+    align-items: center;
+}
+
+.ans__flex img{
+    width: 24px;
+    height: 24px;
+}
+
+.qus{
+    font-size: var(--title2);
+    color: var(--font);
+}
+.sol{
+    margin:  var(--marg-mid);
+    margin-top:  var(--marg-min);
+    border-left: 3px var(--main) solid;
+    font-size: var(--main-text);
+    color: var(--text);
+    background: var(--back);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.ans{
+    background: var(--back);
+    padding: var(--marg-mid);
+    border-radius: 30px;
+    box-shadow: inset -3px -5px 1px var(--main);
+    margin:  var(--marg-mid) 0;
+}
+

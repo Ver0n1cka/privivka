@@ -1,0 +1,16 @@
+
+.footer{
+    width: 100vw;
+background: var(--main);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 2vh 15vw;
+  margin-top: var(--marg-max);
+}
+
+.footer__text{
+    color: var(--back);
+    font-size: var(--main-text);
+}

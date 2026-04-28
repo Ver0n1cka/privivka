@@ -1,0 +1,98 @@
+.vactins__vactina{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--back);
+    border-radius: 30px;
+}
+
+.vactina{
+    width: 100%;
+    margin-top: var(--marg-mid2);
+}
+.flex img{
+    width: 24px;
+    height: 24px;
+}
+h1{
+    font-size:  var(--title);
+}
+
+.vactine__vactina-title{
+    font-size:  var(--title2);
+    color: var(--main);
+}
+
+.vactine__vactina-subtitle{
+    font-size:  var(--title2);
+    color: var(--main);
+}
+
+.vactine__vactina-title-orange{
+    font-size: var(--title2);
+    color: var(--actent);
+}
+
+.two-cell{
+    grid-column: 1/3;
+}
+
+.two-cell-group{
+    grid-row: 2/4;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    margin-bottom:  var(--marg-mid);
+    gap: var(--marg-min);
+}
+
+.vactine__vactina-info{
+    margin:  var(--marg-mid);
+    background: var(--back);
+    padding:  var(--marg-mid2);
+    border-radius: 15px;
+    box-shadow: 0 10px 10px var(--sh);
+}
+
+.vactine__vactina-map{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vactine__vactina-map-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--marg-mid);
+}
+
+.vactine__vactina-map-grid p{
+    margin-bottom:  var(--marg-mid);
+}
+
+.vactine__vactina-map{
+    font-size: var(--min-text);
+}
+
+@media (max-width:800px){
+    .vactins__vactina{
+        display: flex;
+        flex-direction: column;
+        gap: var(--marg-mid2);
+        margin: var(--marg-mid2) 0;
+    }
+
+    .vactine__vactina-info{
+        margin: 0;
+    }
+}
+@media (max-width:600px){
+    .vactine__vactina-map-grid{
+        grid-template-columns: 1fr;
+    }
+    .vactins__main{
+        flex-direction: column;
+        gap: 0;
+    }
+}
