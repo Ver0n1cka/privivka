@@ -36,13 +36,13 @@ function getType(birthDateValue) {
         SetWRD("");
         
         let years = today.getFullYear() - birthDate.getFullYear();
-        // Проверяем, был ли уже день рождения в этом году
+        
         if (today.getMonth() < birthDate.getMonth() || 
             (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
             years--;
         }
         
-        if (years < 3) {
+        if (years < 2) {
             let months = (today.getFullYear() - birthDate.getFullYear()) * 12;
             months += today.getMonth() - birthDate.getMonth();
             
@@ -113,8 +113,8 @@ function getType(birthDateValue) {
         }
         let cltshval = (findVal -2)% 3
         let clesh=vactData.find(item => item.id === parseInt(12));
-        if(findType=="year" && cltshval==0 ){
-            vaMass.push({"vacid":clesh.id, "vacname": clesh.name, "vactext": "Вакцина вводится через три года после последней прививки", "vacrisk": "для людей в группе риска и вне группы риска"});
+        if(findType=="year" && cltshval==0 && findVal>2){
+            vaMass.push({"vacid":clesh.id, "vacname": clesh.name, "vactext": "Вакцина вводится через три года после последней прививки", "vacrisk": "для людей в эпид. регионах"});
         }
 
         SetMass(vaMass)
@@ -148,7 +148,7 @@ function getType(birthDateValue) {
                                         <div key={mas.vacid} className="calcylate__vactine-item" >
                                             <h3 className="calcylate__vactine-vactin">{mas.vacname}</h3>
                                             <p className="calcylate__vactine-text">{mas.vactext} {mas.vacrisk}</p>
-                                            <Link to={`/vactina/${mas.vacid}`} className="calculate-link">узнать больше о вакцине</Link>
+                                            <Link to={`/vactina/${mas.vacid}`} className="calculate-link"  target="_blank">узнать больше о вакцине</Link>
                                         </div>
                                     ))
                                 }

@@ -121,7 +121,7 @@ const Answers = () => {
                         }
                         if (part.type === 'link') {
                             return (
-                                <Link key={idx} to={part.to} className='vactins__main-ligr'>
+                                <Link key={idx} to={part.to} className='vactins__main-ligr' target="_blank">
                                     {part.text}
                                 </Link>
                             );

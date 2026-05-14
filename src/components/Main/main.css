@@ -22,7 +22,7 @@
 }
 .vactins__main h2 a{
     font-size:  var(--title2);
-    color: var(--font);
+    color: var(--main);
 }
 
 .vactins__dops{

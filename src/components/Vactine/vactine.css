@@ -15,6 +15,7 @@
 }
 h1{
     font-size:  var(--title);
+    color: var(--main);
 }
 
 .vactine__vactina-title{

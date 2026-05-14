@@ -83,10 +83,6 @@ const Main = () => {
                 }
             });
 
-
-
-            
-            // Теперь обрабатываем каждую группу и формируем диапазоны
             for (const group of groups.values()) {
                 const sortedValues = group.values.sort((a, b) => a - b);
                 const ranges = [];
@@ -293,7 +289,7 @@ const Main = () => {
             {filteredData.map((vaccine) => (
                 <div key={vaccine.id}  style={{ position: 'relative' }}>
                     <div className="vactins__main">
-                        <h2><Link to={`/vactina/${vaccine.id}`}>{vaccine.name}</Link></h2>
+                        <h2><Link to={`/vactina/${vaccine.id}`}  target="_blank">{vaccine.name}</Link></h2>
                         <div className="vactins__main-p" >
                             <p className={vaccine.legal_capacity === "детские" ? 'vactins__main-lior' : 'vactins__main-ligr'}>{"•"+vaccine.legal_capacity}</p>
                             <p  className={vaccine.type === "обязательные" ? 'vactins__main-lior' : 'vactins__main-ligr'}>{"•"+vaccine.type}</p>
@@ -326,7 +322,7 @@ const Main = () => {
                     </div>
                         )}
 
-                    <Link to={`/vactina/${vaccine.id}`} className="link">узнать больше</Link>
+                    <Link to={`/vactina/${vaccine.id}`} className="link"  target="_blank">узнать больше</Link>
                 </div>
             ))}
 
@@ -338,7 +334,7 @@ const Main = () => {
 			        <td className="vactins__table__typeruad">{vaccine.masstyperuad}</td>
                     <div className="vactins__table__flex">
                         <div className="vactins__main">
-                            <td ><Link to={`/vactina/${vaccine.massid}`} className="vactins__table__flex-name">{vaccine.massname}</Link></td>
+                            <td ><Link to={`/vactina/${vaccine.massid}`} className="vactins__table__flex-name"  target="_blank">{vaccine.massname}</Link></td>
                             <td className={vaccine.type === "обязательные" ? 'vactins__main-lior' : 'vactins__main-ligr'}>{"•"+vaccine.type}</td>
                         </div>
                         <td className="vactins__table__flex-risk">{vaccine.massriskstring}. {vaccine.masstext}</td>

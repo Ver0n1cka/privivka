@@ -28,10 +28,10 @@ const Vactine = () => {
     if(raw_schedule){
         raw_schedule.forEach((raw) => {
             if (raw.risk == "standart" || raw.risk == "all") {
-                standartmass.push({ "ty": raw.type, "va": raw.value, "ruad": raw.ruad });
+                standartmass.push({ "ty": raw.type, "va": raw.value, "ruad": raw.ruad, "text": raw.text });
             }
             if (raw.risk == "risk" || raw.risk == "all") {
-                riskmass.push({ "ty": raw.type, "va": raw.value, "ruad": raw.ruad });
+                riskmass.push({ "ty": raw.type, "va": raw.value, "ruad": raw.ruad, "text": raw.text });
             }
         });
     }
@@ -49,7 +49,7 @@ const Vactine = () => {
         let end = sorted[0];
         
         for (let i = 1; i <= sorted.length; i++) {
-            if (i < sorted.length && sorted[i].va === end.va + 1) {
+            if (i < sorted.length && sorted[i].va === end.va + 1  && sorted[i].text===end.text) {
                 end = sorted[i];
             } else {
                 if (start.va === end.va) {
@@ -70,7 +70,7 @@ const Vactine = () => {
         return ranges.join(", ");
     }
 
-    // Группируем по типам
+
     let standartTypes = [...new Set(standartmass.map(v => v.ty))];
     let riskTypes = [...new Set(riskmass.map(v => v.ty))];
     
